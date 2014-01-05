@@ -50,7 +50,7 @@ typedef enum
 class SmartThingsMega 
 {
   private:
-    HardwareSerial *prt;
+    HardwareSerial *_prt;
     SmartThingsCallout_t *_calloutFunction;
     bool _isDebugEnabled;
     uint32_t _lastPingMS;

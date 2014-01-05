@@ -298,7 +298,7 @@ void SmartThingsMega::handleLine(void)
   //*****************************************************************************
   void SmartThingsMega::run(void)
   { 
-    while((_nBufRX < SMARTTHINGS_RX_BUFFER_SIZE) && available())
+    while((_nBufRX < SMARTTHINGS_RX_BUFFER_SIZE) && _prt->available())
     {
 #if 0 
       _pBufRX[_nBufRX++] = read();
