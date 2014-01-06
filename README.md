@@ -23,7 +23,7 @@ Required software
 
 How to connect the hardware
 ---------------------------
-The IT-100 interface is connected to the communication and power lines of the DSC alarm panel. An Arduino is used to decode the commands from the alarm system and interface with the SmartThings hub. The output of the IT-100 interface is RS232 at 12V levels therefore it can't be directly connected to the Arduino board (it will only accept 5V levels), therefore an RS232 shield is used to convert to the right levels.
+The IT-100 interface is connected to the communication and power lines of the DSC alarm panel (AUX+/AUX- for power and GRN/YEL for data). An Arduino is used to decode the commands from the alarm system and interface with the SmartThings hub. The output of the IT-100 interface is RS232 at 12V levels therefore it can't be directly connected to the Arduino board (it will only accept 5V levels), therefore an RS232 shield is used to convert to the right levels.
 
 A SmartThings shield is used to interface with the SmartThings hub and cloud. The Arduino needs to be capable of receiving and transmitting through two serial ports (one for the IT-100 and another for the SmartThings shield). An Arduino Mega was chosen since it has more than two serial ports. An attempt was made to use an Arduino Uno with one hardware and one software serial port but it was not fast enough to handle all communications and as a result messages were lost. The SmartThings serial port is operating a 2400 bps and if a software serial port is used it blocks all other communication while a message is sent to the hub, which at those speeds it could be several ms.
 
@@ -32,6 +32,8 @@ The official SmartThings Arduino library will only support a software serial por
 There are obviously other ways to achieve the above, for example it is possible to reroute the pins without a prototyping shield. It is also possible to build the RS232 level translator on the prototyping shield using a MAX232 or equivalent device.
 
 Before programming the Arduino board you will need to modify the HomeAlarm.ino file with your pin code, otherwise arming and disarming will not work.
+
+A few pictures of the hardware can be found in the repository.
 
 Setup of the custom device type
 -------------------------------
