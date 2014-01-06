@@ -3,6 +3,7 @@ DSCAlarmSmartThings
 DSC Alarm interface to SmartThings. Able to arm/disarm, monitor zone status and trigger the panic alarm.
 
 Author: Vassilis Varveropoulos
+
 Date: 1/4/14
 
 Required hardware
@@ -35,3 +36,8 @@ Before programming the Arduino board you will need to modify the HomeAlarm.ino f
 Setup of the custom device type
 -------------------------------
 The source code for the device type is also provided. Create a new device type and give it the switch, contact and alarm capabilities. Use the provided source code and publish the device type. Pair your SmartThings shield to you hub and then manually change its device type to the one you created. You should now be able to see your new device and will be able to arm/disarm, monitory the state of the zones and trigger the panic alarm.
+
+Credits
+--------
+* Timer library from Simon Monk
+* SmartThings shield library from SmartThings (modified for ArduinoMega)
